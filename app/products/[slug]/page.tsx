@@ -17,7 +17,7 @@ export default async function Page({ params }: Props) {
     _id,
     _createdAt,
     "id": _id,
-    nama,
+    name,
     sku,
     images,
     price,
