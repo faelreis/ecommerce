@@ -36,7 +36,7 @@ export default async function Page({ searchParams }: Props)  {
   const products = await client.fetch<SanityProduct[]>(
       groq`${filter} ${order}{
         _id,
-        _created_at,
+        _createdAt,
         name,
         sku,
         images,
@@ -45,7 +45,6 @@ export default async function Page({ searchParams }: Props)  {
         description,
         "slug": slug.current
       }`
-
     )
 
   return (

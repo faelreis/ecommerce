@@ -5,7 +5,8 @@ import { urlForImage } from "@/sanity/lib/image"
 import { SanityProduct } from "@/config/inventory"
 import { shimmer, toBase64 } from "@/lib/image"
 
-interface Props {}
+interface Props {
+}
 
 export function ProductGallery() {
   return (
