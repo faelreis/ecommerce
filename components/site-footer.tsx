@@ -19,10 +19,10 @@ export function SiteFooter() {
           ))}
         </nav>
         <Link
-          href="https://www.fullstack.so"
+          href="https://www.linkedin.com/in/rafaelreisfranco/" target="_blank"
           className="mt-10 block text-center text-xs leading-5"
         >
-          &copy; {new Date().getFullYear()} {siteConfig.name} LLC. All rights
+          &copy; {new Date().getFullYear()} Rafael Reis Franco. All rights
           reserved.
         </Link>
       </div>
