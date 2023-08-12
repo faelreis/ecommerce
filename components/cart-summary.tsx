@@ -9,7 +9,8 @@ import { Button } from "@/components/ui/button"
 export function CartSummary() {
 
   const { formattedTotalPrice, totalPrice, cartDetails, cartCount } = useShoppingCart();
-  const shippingAmout = cartCount!  > 0 ? 500 : 0
+  const shippingAmout = cartCount!  > 0 ? 500 : 0;
+  const totalAmout = totalPrice! + shippingAmout
 
   function onCheckout() {}
 
@@ -35,12 +36,12 @@ export function CartSummary() {
         </div>
         <div className="flex items-center justify-between border-t border-gray-200 pt-4 dark:border-gray-600">
           <dt className="text-base font-medium">Order total</dt>
-          <dd className="text-base font-medium">Order Amount</dd>
+          <dd className="text-base font-medium">US$ { totalAmout }</dd>
         </div>
       </dl>
 
       <div className="mt-6">
-        <Button className="w-full">
+        <Button onClick={onCheckout} className="w-full">
           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
           Loading...
         </Button>
