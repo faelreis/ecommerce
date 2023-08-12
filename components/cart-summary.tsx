@@ -3,16 +3,21 @@
 import { useState } from "react"
 import { Loader2 } from "lucide-react"
 import { formatCurrencyString, useShoppingCart } from "use-shopping-cart"
+import Link from 'next/link'
 
 import { Button } from "@/components/ui/button"
 
 export function CartSummary() {
 
   const { formattedTotalPrice, totalPrice, cartDetails, cartCount } = useShoppingCart();
+  const [isLoading, setIsLoading] = useState(false)
+  const isDisabled = isLoading || cartCount === 0 
   const shippingAmout = cartCount!  > 0 ? 500 : 0;
   const totalAmout = totalPrice! + shippingAmout
 
-  function onCheckout() {}
+  function onCheckout() {
+    
+  }
 
   return (
     <section
@@ -41,9 +46,9 @@ export function CartSummary() {
       </dl>
 
       <div className="mt-6">
-        <Button onClick={onCheckout} className="w-full">
-          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-          Loading...
+        <Button className="w-full" disabled={isDisabled}>
+          {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+          {isLoading ? 'Loading...' : 'Checkout'}
         </Button>
       </div>
     </section>
